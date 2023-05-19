@@ -159,7 +159,7 @@ int SetTime(char *date, char *time)
 	// GPS date has format of ddmmyy
 	// GPS time has format of hhmmss.ss
 
-	if ((strlen(date) != 6) | (strlen(time) != 9)) {
+	if ((strlen(date) != 6) | (strlen(time) != 6)) {
 		printf("No date or time fix. Exiting\r\n");
 		return 1;
 	}
@@ -232,8 +232,8 @@ int OpenGPSPort(const char *devname)
 	tcgetattr(fd, &options);
 
 	// Set input and output baud rates
-	cfsetispeed(&options, B9600);
-	cfsetospeed(&options, B9600);
+	cfsetispeed(&options, B38400);
+	cfsetospeed(&options, B38400);
 
 	// Set input modes
 	options.c_iflag |= ICRNL;
