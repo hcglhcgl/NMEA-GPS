@@ -19,4 +19,12 @@ https://gpsd.gitlab.io/gpsd/index.html
 
 It can be used with NTPd to set the time on embedded systems without a Real Time Clock (RTC) like the Raspberry PI. 
 
-
+# Building
+To build:
+```
+gcc gps.c -o gps
+```
+To run:
+```
+sudo ./gps.c
+```
